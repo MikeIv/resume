@@ -1,0 +1,15 @@
+node_modules
+.pnpm-store
+.nuxt
+.nitro
+.data
+.cache
+.output
+dist
+pnpm-lock.yaml
+coverage
+.dsh
+AGENTS.md
+.idea
+# Данные резюме правим руками — prettier их не переформатирует
+data/resume.yaml

@@ -1,0 +1,67 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      NUXT_APP_BASE_URL: /resume/
+      NUXT_PUBLIC_SITE_URL: https://mikeiv.github.io/resume/
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Установка зависимостей
+        run: pnpm install --frozen-lockfile
+
+      - name: OG-карточка и иконки
+        run: pnpm emit:social
+
+      - name: Статическая сборка
+        run: pnpm generate
+
+      - name: Браузер для PDF
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: PDF и DOCX
+        run: |
+          pnpm ats:pdf
+          pnpm ats:docx
+
+      - name: Проверка текстового слоя PDF
+        run: pnpm check:pdf
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .output/public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@v4
+        id: deployment

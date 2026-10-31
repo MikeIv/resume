@@ -1,0 +1,71 @@
+---
+description: Резюме-сайт — продукт, источник данных, эталоны, артефакты, ограничения
+alwaysApply: true
+---
+
+# Резюме-сайт (Nuxt 4, SSG)
+
+**Пакет:** `resume-site` · **Nuxt 4.6** · **SSG** (`nuxt generate`) · цель — GitHub Pages
+(`/resume/`), запасной вариант — Vercel.
+
+**Назначение:** одно резюме для трёх аудиторий — человек (HR, тимлид), ATS
+(одна колонка, текст), AI-агент (`llms.txt`, JSON Resume). Позиционирование —
+Nuxt fullstack разработчик с современной агентской разработкой.
+
+## Источник данных — только `data/resume.yaml`
+
+- Единственный источник правды. Сайт, PDF, DOCX, `resume.json`, `resume.txt`,
+  `llms.txt`, `og.png`, hh-пакет собираются из него; правка текста — там.
+- Схема — `shared/schema/resume.ts` (zod). Новое поле сначала в схему, потом в YAML и
+  в экспортёры.
+- Факты только измеримые: коммиты, файлы, тесты, Lighthouse. Никаких выдуманных
+  цифр и клиентов под NDA; в свободные тексты не попадают телефон и почта.
+
+## Команды
+
+```bash
+pnpm dev | generate | verify | test | typecheck | lint:all
+pnpm build:all     # hh-пакет, og.png, статика, PDF, DOCX, проверка PDF
+pnpm audit:site    # Lighthouse с порогами 95/100/95/95
+pnpm screenshot    # .preview/{desktop,mobile-*}.png
+pnpm rules:sync    # .cursor/rules/*.mdc → AGENTS.md + .dsh/skills
+```
+
+## Эталоны (читать, не искать)
+
+| Что | Путь |
+| --- | --- |
+| Данные резюме | `data/resume.yaml` |
+| Схема и типы | `shared/schema/resume.ts` |
+| Форматтеры (месяцы, вилка, контакты) | `shared/utils/resume.ts` |
+| Экспортёры (JSON Resume, txt, llms, JSON-LD, hh) | `shared/utils/exporters.ts` |
+| Чтение данных на сервере | `server/utils/resume.ts` (`loadResume`) |
+| Загрузка данных в UI | `app/composables/useResume.ts` |
+| Секции страницы | `app/components/*Section.vue` |
+| ATS-страница и печать | `app/pages/ats.vue` |
+| Токены и миксины | `app/assets/styles/_tokens.scss`, `_mixins.scss` |
+| Генераторы артефактов | `scripts/*.ts` |
+| Тесты данных и экспортёров | `tests/*.spec.ts` |
+
+Код-стиль — `nuxt-template.mdc` (скилл `.dsh/skills/nuxt-template`).
+
+## Правила артефактов
+
+- PDF: одна колонка, без иконок и картинок, **обязательный текстовый слой**,
+  не больше двух страниц. Проверка — `pnpm check:pdf`, её падение = красный билд.
+- JSON Resume обязан соответствовать схеме, `meta.canonical` и
+  `projects[].keywords` не удалять: на них опираются HR-боты.
+- Статика с baseURL: внутренние ссылки на артефакты идут через base (`/resume/...`),
+  абсолютный адрес — из `NUXT_PUBLIC_SITE_URL` (дефолт — GitHub Pages). Не хардкодить
+  `/resume.json` в шаблонах — только через хелперы с base.
+- Сгенерированные PDF/DOCX и `.preview/` в git не идут (см. `.gitignore`).
+
+## Ограничения
+
+- Не менять `srcDir`, SSG-режим, пороги Lighthouse и структуру `data/resume.yaml`
+  без запроса.
+- Секреты — только в `.env` (`NUXT_PUBLIC_*` — публичные значения). СНИЛС, паспорт
+  и полную дату рождения не публиковать.
+- Стили — CSS Modules + `$style`, SCSS с токенами; глобальные классы не заводить.
+- Коммит — по слову «коммить», push — по «пушь». Сообщения коммитов — на английском
+  (Conventional Commits), тело — тоже.

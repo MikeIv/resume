@@ -1,0 +1,334 @@
+# Единственный источник правды для сайта, PDF/DOCX и hh-пакета.
+# Правится руками, проверяется схемой shared/schema/resume.ts.
+meta:
+  version: 1
+  updated: 2026-10-31
+  locale: ru-RU
+
+basics:
+  firstName: Михаил
+  lastName: Иванов
+  patronymic: Юрьевич
+  label: Nuxt fullstack разработчик (Vue 3, Nuxt 4, TypeScript)
+  headline: >-
+    Собираю полный цикл на Nuxt 4: интерфейс, Nitro-эндпоинты, база, авторизация,
+    тесты и деплой. Девять лет в веб-разработке и 15+ коммерческих проектов студии.
+  summary: >-
+    Fullstack-разработчик на Nuxt 4 и Vue 3 с TypeScript. Веду фронтенд коммерческих
+    проектов веб-студии Grand: система бронирования отеля Varvarka, cruise.ru, личные
+    кабинеты, медиаплатформа. Пишу серверную часть на Nitro и Prisma, закрываю логику
+    тестами Vitest и Playwright, отвечаю за релизы на Vercel и в GitLab CI. До веба
+    пять лет работал в дизайне и полиграфии, поэтому закрываю не только код, но и
+    интерфейс: Figma, дизайн-система, вёрстка. Разрабатываю с AI-агентами по
+    формализованному процессу — правила, план, проверки, ревью — вместо «сгенерировать
+    и надеяться».
+  location:
+    city: Москва
+    countryCode: RU
+    timezone: Europe/Moscow
+  formats: [remote, hybrid, office]
+  salary:
+    amount: 225000
+    currency: RUR
+    period: month
+    note: на руки, обсуждаемо
+  contacts:
+    email: mike@ivanov-post.ru
+    phone: +7 (977) 946-72-28
+    telegram: Mike_Iv
+    github: https://github.com/MikeIv
+  stats:
+    - value: 9 лет
+      label: в веб-разработке
+    - value: 15+
+      label: коммерческих проектов
+    - value: '5'
+      label: проектов с демо и открытым кодом
+
+experience:
+  - company: Веб-студия Grand
+    legalName: ИП Буйницкая И.И.
+    position: Программист (Nuxt fullstack)
+    from: 2025-09
+    to: null
+    location: Москва, удалённо
+    summary: >-
+      Коммерческие веб-приложения для клиентов студии: отели и бронирование,
+      личные кабинеты, медиа, e-commerce.
+    achievements:
+      - >-
+        Ведущий разработчик интерфейса системы бронирования отеля Varvarka
+        (Nuxt 4, TypeScript, Nuxt UI и PrimeVue): поиск и выбор номеров, тарифы,
+        мультибронирование, оплата, многоязычность на @nuxtjs/i18n. 363 из 428
+        коммитов репозитория мои.
+      - >-
+        Развиваю cruise.ru (Nuxt 2): каталог круизов, сезонные фиче-флаги,
+        sitemap и robots, Яндекс.Карты и Метрика, правки в проде без регрессий.
+      - >-
+        Веду личный кабинет «Щёлковский» (Nuxt 3 и Nuxt UI): авторизация, заявки,
+        интеграция с API, unit-тесты Vitest и e2e Playwright.
+      - >-
+        Собрал iframe-модуль бронирования, который встраивается на партнёрские
+        сайты и переиспользует основной флоу без дублирования кода.
+      - >-
+        15+ клиентских проектов студии: бронирование, личные кабинеты, лендинги,
+        e-commerce — от макета до выкладки.
+    stack:
+      [Nuxt 4, Nuxt 3, Nuxt 2, Vue 3, TypeScript, Nitro, Pinia, Nuxt UI, PrimeVue, SCSS, CSS Modules, Vitest, Playwright, GitLab]
+
+  - company: ГБУ МО «Мособлгеотрест»
+    position: Программист → главный специалист
+    from: 2023-08
+    to: 2025-08
+    location: Москва
+    summary: >-
+      Информационные подсистемы ИСОГД Московской области и Оперативная карта:
+      слои, графические данные, отчётность, интеграции.
+    achievements:
+      - >-
+        Разработка и модернизация информационных подсистем ИСОГД МО, развитие
+        внутренних веб-инструментов.
+      - >-
+        Формирование и ведение слоя границ разрабатываемых проектов планировки
+        территории.
+      - >-
+        Технологическое и информационное взаимодействие ИСОГД с внешними
+        информационными системами.
+      - >-
+        Автономная система ведения и наполнения Оперативной карты: загрузка и
+        актуализация графических данных, отчёты и аналитика.
+    stack: []
+
+  - company: ООО «Синергия Софт»
+    position: Старший верстальщик
+    from: 2021-10
+    to: 2023-03
+    location: Москва
+    summary: >-
+      Образовательная платформа университета «Синергия»: интерфейсы, компоненты,
+      поддержка и развитие проектов на Vue.js.
+    achievements:
+      - >-
+        Разрабатывал и поддерживал проекты на Vue.js: новые страницы, компоненты,
+        интеграция с бэкендом.
+      - >-
+        Отвечал за вёрстку и поддержку интерфейсов образовательной платформы,
+        разбор и исправление накопленных дефектов вёрстки.
+      - >-
+        Собирал переиспользуемые компоненты и общие стили, чтобы снимать
+        дублирование между разделами платформы.
+    stack: [Vue.js, JavaScript, HTML5, CSS3, SCSS, Git]
+
+projects:
+  - slug: nuxt4-full
+    name: Nuxt4 Full — mini-SaaS на Nuxt 4
+    tagline: Полный цикл на одном фреймворке
+    role: автор
+    period: 2026
+    stack: [Nuxt 4, TypeScript, Nitro, Prisma, PostgreSQL, better-auth, Zod, Vitest, Vercel]
+    summary: >-
+      Task board с ролями и авторизацией: Nuxt 4 для интерфейса, Nitro для API,
+      Prisma и PostgreSQL для данных, better-auth для входа, миграции и seed.
+    results:
+      - 81 коммит и 113 файлов исходников, демо развёрнуто на Vercel.
+      - pnpm verify (ESLint, Prettier, Stylelint, typecheck) в pre-push.
+    demo: https://nuxt4-full.vercel.app
+    code: https://github.com/MikeIv/Nuxt4_full
+    featured: true
+
+  - slug: varvarka
+    name: Varvarka — бронирование отеля
+    tagline: Номера, тарифы, оплата
+    role: ведущий фронтенд-разработчик
+    period: 2025–2026
+    stack:
+      [Nuxt 4, Vue 3, TypeScript, Nuxt UI, PrimeVue, Pinia, '@nuxtjs/i18n', SCSS, Vitest, Playwright]
+    summary: >-
+      Бронирование номеров для отеля: поиск и выбор номеров, тарифы, дополнительные
+      услуги, мультибронирование, оплата, несколько языков.
+    results:
+      - 428 коммитов в репозитории, 363 моих; 254 файла интерфейса.
+      - Unit-тесты Vitest и e2e Playwright на критичные сценарии бронирования.
+    featured: true
+
+  - slug: cruise
+    name: cruise.ru — каталог круизов
+    tagline: Долгоживущий Nuxt-проект с сезонной логикой
+    role: разработчик
+    period: 2023–2026
+    stack:
+      [Nuxt 2, Vue 2, '@nuxtjs/i18n', '@nuxtjs/sitemap', '@nuxtjs/robots', Яндекс.Карты, Метрика, SCSS]
+    summary: >-
+      Каталог круизов и теплоходов: карточки, расписания, сезонные разделы,
+      многоязычность, карты и аналитика.
+    results:
+      - Сезонные разделы включаются и выключаются одним флагом без переписывания страниц.
+      - Правки в проде без регрессий на живом трафике.
+    demo: https://cruise.ru
+    featured: true
+
+  - slug: sc-shelkovskiy
+    name: СК «Щёлковский» — сайт комплекса
+    tagline: Услуги, расписание, заявки
+    role: разработчик
+    period: 2026
+    stack: [Vue 3, Vite, TypeScript, Nuxt UI, SCSS]
+    summary: >-
+      Услуги, расписание и формы заявок; адаптивная вёрстка под мобильные.
+    results:
+      - Демо на Vercel, исходники открыты.
+    demo: https://sc-shelkovskiy.vercel.app
+    code: https://github.com/MikeIv/SC_Shelkovskiy
+    featured: true
+
+  - slug: lk-assistant
+    name: lk_assistant — личный кабинет
+    tagline: Авторизация, формы, состояния
+    role: разработчик
+    period: 2026
+    stack: [Vue 3, TypeScript, Vite, Pinia, SCSS]
+    summary: >-
+      Личный кабинет с авторизацией, формами и состояниями загрузки: практика
+      аккуратного UI и предсказуемых состояний.
+    results:
+      - Демо на Vercel, исходники открыты.
+    demo: https://lk-assistant.vercel.app
+    code: https://github.com/MikeIv/lk_assistant
+    featured: false
+
+  - slug: ryaz-pressa
+    name: Рязанская пресса — медиаплатформа
+    tagline: Публикации и материалы
+    role: разработчик
+    period: 2026
+    stack: [TypeScript, Vue 3, Nitro]
+    summary: >-
+      Медиаплатформа с публикациями, рубриками и серверной частью на Nitro.
+    results:
+      - Демо на Vercel, исходники открыты.
+    demo: https://ryaz-pressa.vercel.app
+    code: https://github.com/MikeIv/RyazPressa
+    featured: false
+
+skills:
+  - group: Фреймворк и язык
+    items:
+      [Nuxt 4, Nuxt 3, Nuxt 2, Vue 3 (Composition API), TypeScript, JavaScript (ES2022), Node.js]
+  - group: Сервер и данные
+    items: [Nitro, REST API, Prisma, PostgreSQL, SQLite, better-auth, Zod]
+  - group: UI и стили
+    items:
+      [Pinia, Vue Router, Nuxt UI, PrimeVue, '@nuxtjs/i18n', SCSS, CSS Modules, Tailwind CSS, Figma]
+  - group: Тесты и качество
+    items: [Vitest, Playwright, ESLint, Prettier, Stylelint, Husky, Vite, pnpm, Git, GitLab CI]
+  - group: Агентская разработка
+    items:
+      [Cursor, DS Harness, AGENTS.md и правила проекта, MCP, Figma REST, планирование и приёмка]
+
+agentic:
+  heading: Разработка с AI-агентами
+  lead: >-
+    Агент — не замена инженеру, а исполнитель внутри процесса, у которого есть
+    правила, план, проверки и ревью. Именно так собран этот сайт и инструмент
+    поиска вакансий.
+  items:
+    - title: Правила вместо надежды
+      text: >-
+        Веду собственный набор правил для Cursor и DS Harness: класс задачи,
+        brief, план, волны исполнения, проверка. AGENTS.md и скиллы генерируются
+        из .cursor/rules, рассинхрон ловит CI.
+    - title: Проверки как контракт
+      text: >-
+        pnpm verify = линты + типы + тесты, pre-push не пропускает красное.
+        У каждого проекта есть команда, которая одной строкой отвечает на вопрос
+        «это можно выкатывать».
+    - title: Агент делает, человек решает
+      text: >-
+        Продуктовые и архитектурные решения остаются за мной; агент разбирает
+        код, готовит варианты, пишет тесты и доводит задачу до зелёных проверок.
+        Ревью — другим инструментом, чтобы ошибки не воспроизводились дважды.
+
+education:
+  - institution: Кыргызско-Российский Славянский университет (КРСУ)
+    faculty: Психология
+    degree: Высшее
+    year: 2000
+
+languages:
+  - name: Русский
+    level: Родной
+  - name: Английский
+    level: B2 (средне-продвинутый)
+
+# «Портрет кандидата» AI-ассистента hh: желаемые критерии поверх выводимых из резюме
+# (роль, стек, опыт, формат, город, зарплата). В пакет не попадают телефон и почта.
+hh:
+  # Поле KEYWORDS у hh принимает не больше 30 тегов: здесь курируемый отбор из skills,
+  # чтобы в поле попали и стек, и тесты, и агентская разработка.
+  keywords:
+    - Nuxt 4
+    - Nuxt 3
+    - Nuxt 2
+    - Vue 3 (Composition API)
+    - TypeScript
+    - JavaScript (ES2022)
+    - Node.js
+    - Nitro
+    - REST API
+    - Prisma
+    - PostgreSQL
+    - better-auth
+    - Zod
+    - Pinia
+    - Nuxt UI
+    - PrimeVue
+    - '@nuxtjs/i18n'
+    - SCSS
+    - CSS Modules
+    - Tailwind CSS
+    - Figma
+    - Vitest
+    - Playwright
+    - ESLint
+    - Prettier
+    - Stylelint
+    - Git
+    - Cursor
+    - DS Harness
+    - MCP
+  portrait:
+    domain: >-
+      Продуктовый веб и e-commerce: сервисы, где за интерфейсом стоит реальная
+      бизнес-логика — бронирование, заказы, оплата, личные кабинеты.
+    product: >-
+      Продукт, где интерфейс и серверная часть живут в одном стеке Nuxt и Nitro,
+      и есть место для TypeScript, тестов и аккуратного UI.
+    team: >-
+      Команда 3–8 человек с тимлидом, код-ревью и понятными зонами
+      ответственности.
+    process: >-
+      Git-ветки, CI, автоматические проверки и тесты, короткие релизы без
+      «заморозок».
+
+earlyExperience:
+  - period: 2019–2021
+    text: >-
+      Разные компании: ООО «Морские и речные круизы» — специалист IT-отдела, вёрстка
+      и JavaScript (до августа 2020); «ВЭЙНЕТТ ТРЭДИНГ» — менеджер отдела рекламы
+      (сентябрь 2020 — март 2021); ООО «Данцер», интернет-провайдер — программист
+      (апрель — август 2021); университет «Синергия» — верстальщик и старший
+      верстальщик (август — сентябрь 2021).
+  - period: 2017–2018
+    text: >-
+      Фриланс: вёрстка сайтов, переход из полиграфии в веб-разработку.
+  - period: 2012–2017
+    text: >-
+      Дизайнер-верстальщик и оператор допечатной подготовки: макеты, цветокоррекция,
+      подготовка к печати, 3D-визуализация.
+
+seo:
+  title: Михаил Иванов — Nuxt fullstack разработчик (Vue 3, TypeScript)
+  description: >-
+    Резюме Nuxt fullstack разработчика: Nuxt 4, Vue 3, TypeScript, Nitro, Prisma,
+    тесты и агентская разработка. Девять лет в веб-разработке, 15+ коммерческих
+    проектов.
