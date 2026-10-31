@@ -35,14 +35,14 @@ jobs:
       - name: Установка зависимостей
         run: pnpm install --frozen-lockfile
 
+      - name: Браузер для OG-карточки и PDF
+        run: pnpm exec playwright install --with-deps chromium
+
       - name: OG-карточка и иконки
         run: pnpm emit:social
 
       - name: Статическая сборка
         run: pnpm generate
-
-      - name: Браузер для PDF
-        run: pnpm exec playwright install --with-deps chromium
 
       - name: PDF и DOCX
         run: |
