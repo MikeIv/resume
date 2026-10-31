@@ -36,9 +36,11 @@ logs
 .planning/state.md
 .planning/figma/
 
-# Agent: local DS Harness state, generated skills stay tracked
-.dsh/*
-!.dsh/skills/
+# Agent: локальные правила и служебные файлы — в публичный репозиторий не идут
+.cursor/
+.dsh/
+AGENTS.md
+AGENTS.local.md
 
 # Agent: local audit reports
 docs/audit-*.md
