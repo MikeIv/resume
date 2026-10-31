@@ -353,6 +353,9 @@ function portraitDesired(resume: Resume): string[] {
 /** Лимит тегов в поле KEYWORDS у hh. */
 const HH_KEYWORD_LIMIT = 30
 
+/** Роль в дереве специализаций hh: других подходящих ролей ИТ-отрасль не предлагает. */
+const HH_SPECIALIZATION = 'Программист, разработчик'
+
 /** Теги для hh: курируемый `hh.keywords`, иначе все навыки резюме в пределах лимита. */
 function hhKeywords(resume: Resume): string[] {
   return (resume.hh?.keywords ?? flatSkills(resume)).slice(0, HH_KEYWORD_LIMIT)
@@ -392,9 +395,14 @@ export function toHhPack(resume: Resume): string {
   lines.push('')
   lines.push('## Желаемая должность и специализации')
   lines.push('')
+  lines.push('> Специализации — дерево ИТ-отрасли hh: «Frontend-разработчик» и')
+  lines.push(
+    '> «Fullstack-разработчик» в нём отсутствуют, ближайшая роль — «Программист, разработчик».',
+  )
+  lines.push('')
   lines.push('```')
-  lines.push('Fullstack-разработчик, Frontend-разработчик, Программист, разработчик')
-  lines.push('Специализации: Программист, разработчик; Frontend-разработчик; Fullstack-разработчик')
+  lines.push(basics.label)
+  lines.push(`Специализации: ${HH_SPECIALIZATION}`)
   lines.push('```')
   lines.push('')
   lines.push('## О себе')

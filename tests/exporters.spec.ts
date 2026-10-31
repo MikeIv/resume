@@ -112,6 +112,15 @@ describe('hh-пакет', () => {
     expect(pack).toContain('> Лимит поля — 30 тегов.')
   })
 
+  it('предлагает только существующие в hh специализации', async () => {
+    const resume = await loadTestResume()
+    const pack = toHhPack(resume)
+
+    expect(pack).toContain('Специализации: Программист, разработчик')
+    expect(pack).not.toMatch(/Специализации:.*Fullstack-разработчик/)
+    expect(pack).not.toMatch(/Специализации:.*Frontend-разработчик/)
+  })
+
   it('выводит образование и языки, когда они заполнены', async () => {
     const resume = await loadTestResume()
     const pack = toHhPack({
