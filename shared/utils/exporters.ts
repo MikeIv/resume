@@ -20,7 +20,6 @@ export interface JsonResumeBasics {
   name: string
   label: string
   email: string
-  phone: string
   url?: string
   summary: string
   location: { city: string; countryCode: string }
@@ -107,7 +106,6 @@ export function toJsonResume(resume: Resume, canonicalUrl = ''): JsonResume {
       name: fullName(basics),
       label: basics.label,
       email: basics.contacts.email,
-      phone: basics.contacts.phone,
       url: canonicalUrl || basics.contacts.site,
       summary: basics.summary,
       location: { city: basics.location.city, countryCode: basics.location.countryCode },
@@ -162,7 +160,6 @@ export function toPlainText(resume: Resume): string {
 
   const contacts = [
     basics.contacts.email,
-    basics.contacts.phone,
     basics.contacts.telegram ? `Telegram @${basics.contacts.telegram}` : '',
     basics.contacts.github.replace(/^https?:\/\//, ''),
     basics.contacts.hh ?? '',
@@ -271,7 +268,6 @@ export function toLlmsTxt(resume: Resume, base = ''): string {
     '## Контакты',
     '',
     `- E-mail: ${basics.contacts.email}`,
-    `- Телефон: ${basics.contacts.phone}`,
     `- Город: ${basics.location.city}, ${basics.location.countryCode}`,
     `- Формат: ${formatWorkFormats(basics.formats)}`,
     `- Ожидания: ${formatSalary(basics.salary)}`,
@@ -302,7 +298,6 @@ export function toJsonLd(resume: Resume, base = ''): Record<string, unknown> {
     description: basics.summary,
     url: root || basics.contacts.site,
     email: `mailto:${basics.contacts.email}`,
-    telephone: basics.contacts.phone,
     address: {
       '@type': 'PostalAddress',
       addressLocality: basics.location.city,
@@ -383,7 +378,6 @@ export function toHhPack(resume: Resume): string {
   lines.push('')
   lines.push('```')
   lines.push(`E-mail: ${basics.contacts.email}`)
-  lines.push(`Телефон: ${basics.contacts.phone}`)
   if (basics.contacts.telegram) {
     lines.push(`Telegram: @${basics.contacts.telegram}`)
   }

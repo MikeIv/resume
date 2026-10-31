@@ -79,7 +79,10 @@ async function main(): Promise<void> {
       (skill) => skill === tag || skill.startsWith(`${tag} `) || skill.startsWith(`${tag} (`),
     ),
   )
-  const contacts = [resume.basics.contacts.email, resume.basics.contacts.phone]
+  const contacts = [
+    resume.basics.contacts.email,
+    resume.basics.contacts.telegram ? `@${resume.basics.contacts.telegram}` : '',
+  ].filter(Boolean)
 
   const browser = await chromium.launch()
   try {

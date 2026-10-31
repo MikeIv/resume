@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Resume } from '#shared/schema/resume'
-import { fullName, telHref, telegramHref } from '#shared/utils/resume'
+import { fullName, telegramHref } from '#shared/utils/resume'
 
 interface Props {
   resume: Resume
@@ -14,7 +14,6 @@ const items = computed(() => {
   const { contacts } = basics.value
   return [
     { href: `mailto:${contacts.email}`, label: contacts.email, note: 'Почта', icon: 'lucide:mail' },
-    { href: telHref(contacts.phone), label: contacts.phone, note: 'Телефон', icon: 'lucide:phone' },
     ...(contacts.telegram
       ? [
           {

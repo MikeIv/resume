@@ -4,7 +4,6 @@ import {
   formatPeriod,
   formatSalary,
   formatWorkFormats,
-  telHref,
   telegramHref,
 } from '../shared/utils/resume'
 
@@ -40,8 +39,7 @@ describe('форматирование', () => {
     expect(formatWorkFormats(['remote', 'hybrid'])).toBe('удалённо, гибрид')
   })
 
-  it('собирает ссылки на телефон и телеграм', () => {
-    expect(telHref('+7 985 583-89-58')).toBe('tel:+79855838958')
+  it('собирает ссылку на телеграм', () => {
     expect(telegramHref('@Mike_Iv')).toBe('https://t.me/Mike_Iv')
   })
 })

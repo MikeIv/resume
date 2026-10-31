@@ -7,7 +7,6 @@ const nonEmpty = z.string().trim().min(1)
 
 export const contactSchema = z.object({
   email: z.email(),
-  phone: nonEmpty,
   telegram: nonEmpty.optional(),
   github: z.url(),
   /** Публичная ссылка на резюме hh.ru — появляется после публикации профиля. */

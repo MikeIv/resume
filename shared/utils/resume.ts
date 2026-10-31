@@ -97,12 +97,6 @@ export function shortName(basics: ResumeBasics): string {
   return `${basics.firstName} ${basics.lastName}`
 }
 
-/** Телефон в ссылке `tel:` без пробелов и дефисов. */
-export function telHref(phone: string): string {
-  const normalized = phone.replace(/[^\d+]/g, '')
-  return `tel:${normalized}`
-}
-
 /** Телеграм в ссылке `https://t.me/...`. */
 export function telegramHref(handle: string): string {
   return `https://t.me/${handle.replace(/^@/, '')}`

@@ -61,7 +61,6 @@ async function main(): Promise<void> {
         new TextRun({
           text: [
             basics.contacts.email,
-            basics.contacts.phone,
             basics.contacts.telegram ? `Telegram @${basics.contacts.telegram}` : '',
             basics.contacts.github,
           ]

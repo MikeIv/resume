@@ -13,7 +13,6 @@ Nuxt fullstack разработчик (Vue 3, Nuxt 4, TypeScript)
 
 ```
 E-mail: mike@ivanov-post.ru
-Телефон: +7 (977) 946-72-28
 Telegram: @Mike_Iv
 GitHub: https://github.com/MikeIv
 Сайт: https://mikeiv.github.io/resume/

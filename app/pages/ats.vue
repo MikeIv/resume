@@ -35,7 +35,6 @@ const statusLine = computed(() =>
 const contactLine = computed(() =>
   [
     basics.value.contacts.email,
-    basics.value.contacts.phone,
     basics.value.contacts.telegram ? telegramHref(basics.value.contacts.telegram) : null,
     basics.value.contacts.github,
   ]
