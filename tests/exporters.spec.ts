@@ -80,6 +80,7 @@ describe('hh-пакет', () => {
     expect(pack).toContain('## Чек-лист')
     expect(pack).toContain(resume.basics.label)
     expect(pack).toContain(resume.basics.contacts.email)
+    expect(pack).toContain(`Сайт: ${resume.basics.contacts.site}`)
   })
 
   it('собирает портрет кандидата из шести обязательных и четырёх желаемых критериев', async () => {

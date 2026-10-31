@@ -43,6 +43,10 @@ logs
 # Agent: local audit reports
 docs/audit-*.md
 
+# Agent: внутренние документы фазы — handoff и скриншоты hh (не для публики)
+docs/handoff-*.md
+docs/hh/
+
 # Сгенерированные артефакты (собираются командой pnpm build:all)
 public/Ivanov-Mikhail-Nuxt-Fullstack.pdf
 public/Ivanov-Mikhail-Nuxt-Fullstack.docx

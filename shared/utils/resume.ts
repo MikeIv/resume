@@ -79,6 +79,14 @@ export function formatEducation(item: ResumeEducation): string {
     .join(', ')
 }
 
+/** `https://mikeiv.github.io/resume/` → `mikeiv.github.io/resume` — для подписей в PDF и OG. */
+export function siteAddress(url: string | undefined): string {
+  if (!url) {
+    return ''
+  }
+  return url.replace(/^https?:\/\//, '').replace(/\/$/, '')
+}
+
 /** Полное имя одной строкой. */
 export function fullName(basics: ResumeBasics): string {
   return [basics.lastName, basics.firstName, basics.patronymic].filter(Boolean).join(' ')

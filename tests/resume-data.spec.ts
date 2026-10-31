@@ -19,6 +19,13 @@ describe('resume.yaml', () => {
     expect(resume.skills.length).toBeGreaterThanOrEqual(3)
   })
 
+  it('указывает адрес сайта и контакты', async () => {
+    const resume = parseResume(await readFile(DATA, 'utf8'))
+
+    expect(resume.basics.contacts.site).toMatch(/^https:\/\//)
+    expect(resume.basics.contacts.email).toContain('@')
+  })
+
   it('содержит ровно одно текущее место работы', async () => {
     const resume = parseResume(await readFile(DATA, 'utf8'))
     const current = resume.experience.filter((job) => job.to === null)

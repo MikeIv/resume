@@ -388,6 +388,12 @@ export function toHhPack(resume: Resume): string {
     lines.push(`Telegram: @${basics.contacts.telegram}`)
   }
   lines.push(`GitHub: ${basics.contacts.github}`)
+  if (basics.contacts.site) {
+    lines.push(`Сайт: ${basics.contacts.site}`)
+  }
+  if (basics.contacts.hh) {
+    lines.push(`Резюме на hh: ${basics.contacts.hh}`)
+  }
   lines.push('```')
   lines.push('')
   lines.push('## Желаемая должность и специализации')

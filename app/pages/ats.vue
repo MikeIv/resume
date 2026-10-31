@@ -5,6 +5,7 @@ import {
   formatSalary,
   formatWorkFormats,
   fullName,
+  siteAddress,
   telegramHref,
 } from '#shared/utils/resume'
 
@@ -41,6 +42,14 @@ const contactLine = computed(() =>
     .filter(Boolean)
     .join(' · '),
 )
+
+/** Подпись в подвале: адрес сайта берём из данных, без хардкода в шаблоне. */
+const siteNote = computed(() => {
+  const address = siteAddress(basics.value.contacts.site)
+  return address
+    ? `PDF, DOCX и машиночитаемый JSON — ${address}`
+    : 'PDF, DOCX и машиночитаемый JSON'
+})
 
 /** Результаты проекта без повторов «демо на Vercel»: ссылки и так идут строкой ниже. */
 function projectResults(results: string[]): string[] {
@@ -192,7 +201,7 @@ useHead({
 
     <footer :class="$style.footer">
       <span>Обновлено {{ resume.meta.updated }}</span>
-      <span>PDF, DOCX и машиночитаемый JSON — mikeiv.github.io/resume</span>
+      <span>{{ siteNote }}</span>
     </footer>
   </article>
 </template>

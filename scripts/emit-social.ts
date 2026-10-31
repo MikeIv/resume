@@ -2,7 +2,7 @@ import { mkdir } from 'node:fs/promises'
 import { join } from 'node:path'
 import { chromium } from 'playwright'
 import { ROOT, readResume } from './lib'
-import { flatSkills, fullName } from '../shared/utils/resume'
+import { flatSkills, fullName, siteAddress } from '../shared/utils/resume'
 
 const DARK = '#0b0f14'
 const ACCENT = '#37e2a0'
@@ -11,7 +11,13 @@ const ACCENT = '#37e2a0'
 const PREFERRED_TAGS = ['Nuxt 4', 'Vue 3', 'TypeScript', 'Nitro', 'Prisma']
 
 /** Карточка для соцсетей: имя, роль, ключевые технологии, контакты. */
-function ogMarkup(name: string, role: string, tags: string[], contacts: string[]): string {
+function ogMarkup(
+  name: string,
+  role: string,
+  tags: string[],
+  contacts: string[],
+  site: string,
+): string {
   return `<!doctype html>
 <html lang="ru">
 <head><meta charset="utf-8"><style>
@@ -46,7 +52,7 @@ function ogMarkup(name: string, role: string, tags: string[], contacts: string[]
   </div>
   <div class="bottom">
     <span>${contacts.join(' · ')}</span>
-    <span class="accent">mikeiv.github.io/resume</span>
+    ${site ? `<span class="accent">${site}</span>` : ''}
   </div>
 </body></html>`
 }
@@ -80,9 +86,10 @@ async function main(): Promise<void> {
     const page = await browser.newPage()
 
     await page.setViewportSize({ width: 1200, height: 630 })
-    await page.setContent(ogMarkup(name, resume.basics.label, tags, contacts), {
-      waitUntil: 'load',
-    })
+    await page.setContent(
+      ogMarkup(name, resume.basics.label, tags, contacts, siteAddress(resume.basics.contacts.site)),
+      { waitUntil: 'load' },
+    )
     await page.screenshot({ path: join(outputDir, 'og.png') })
     console.log('OG: public/og.png')
 
