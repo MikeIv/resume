@@ -25,10 +25,7 @@ const props = defineProps<Props>()
           <dl :class="$style.facts">
             <div :class="$style.fact">
               <dt>Локация</dt>
-              <dd>
-                {{ props.resume.basics.location.city }},
-                {{ props.resume.basics.location.countryCode }}
-              </dd>
+              <dd>{{ props.resume.basics.location.city }}</dd>
             </div>
             <div :class="$style.fact">
               <dt>Формат</dt>
