@@ -261,18 +261,16 @@ const artifacts = computed(() => [
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+  container: hero-side / inline-size;
 }
 
 .stats {
   display: grid;
   gap: 0.75rem;
 
-  @include up($bp-sm) {
+  // 36rem: три карточки от ~11rem, иначе «коммерческих» вылезает из рамки.
+  @container hero-side (min-width: 36rem) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  @include down($bp-sm) {
-    grid-template-columns: 1fr;
   }
 }
 
