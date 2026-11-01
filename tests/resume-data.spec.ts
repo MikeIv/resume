@@ -31,7 +31,7 @@ describe('resume.yaml', () => {
     const current = resume.experience.filter((job) => job.to === null)
 
     expect(current).toHaveLength(1)
-    expect(current[0]?.company).toMatch(/Grand/)
+    expect(current[0]?.company).toMatch(/Гранд/)
   })
 
   it('опыты отсортированы от нового к старому', async () => {

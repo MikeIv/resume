@@ -31,11 +31,11 @@ const props = defineProps<Props>()
 
           <article :class="$style.card">
             <header :class="$style.cardHead">
-              <h3 :class="$style.company">{{ job.company }}</h3>
-              <p :class="$style.position">
-                {{ job.position }}
-                <span v-if="job.legalName" :class="$style.legal">· {{ job.legalName }}</span>
-              </p>
+              <h3 :class="$style.company">
+                {{ job.company }}
+                <span v-if="job.legalName" :class="$style.legal">({{ job.legalName }})</span>
+              </h3>
+              <p :class="$style.position">{{ job.position }}</p>
               <p v-if="job.location" :class="$style.location">{{ job.location }}</p>
             </header>
 
