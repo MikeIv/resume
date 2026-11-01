@@ -10,7 +10,7 @@ describe('JSON Resume', () => {
     const json = toJsonResume(resume, SITE)
 
     expect(json.$schema).toContain('jsonresume')
-    expect(json.basics.name).toBe('Иванов Михаил Юрьевич')
+    expect(json.basics.name).toBe('Михаил Иванов')
     expect(json.basics.label).toContain('Nuxt')
     expect(json.basics.email).toContain('@')
     expect(json.basics.profiles.some((profile) => profile.network === 'GitHub')).toBe(true)
@@ -31,7 +31,7 @@ describe('простой текст', () => {
     for (const heading of ['О СЕБЕ', 'КЛЮЧЕВЫЕ НАВЫКИ', 'ОПЫТ РАБОТЫ', 'ПРОЕКТЫ', 'РАННИЙ ОПЫТ']) {
       expect(text).toContain(heading)
     }
-    expect(text).toContain('ИВАНОВ МИХАИЛ ЮРЬЕВИЧ')
+    expect(text).toContain('МИХАИЛ ИВАНОВ')
     expect(text).toContain(resume.basics.contacts.email)
     expect(text).toContain('Nuxt 4')
   })

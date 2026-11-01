@@ -8,7 +8,6 @@ meta:
 basics:
   firstName: Михаил
   lastName: Иванов
-  patronymic: Юрьевич
   label: Nuxt fullstack разработчик (Vue 3, Nuxt 4, TypeScript)
   headline: >-
     Собираю полный цикл на Nuxt 4: интерфейс, Nitro-эндпоинты, база, авторизация,

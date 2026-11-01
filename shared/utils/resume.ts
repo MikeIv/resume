@@ -87,9 +87,11 @@ export function siteAddress(url: string | undefined): string {
   return url.replace(/^https?:\/\//, '').replace(/\/$/, '')
 }
 
-/** Полное имя одной строкой. */
+/** Полное имя одной строкой: без отчества — «Михаил Иванов», с отчеством — «Иванов Михаил Юрьевич». */
 export function fullName(basics: ResumeBasics): string {
-  return [basics.lastName, basics.firstName, basics.patronymic].filter(Boolean).join(' ')
+  return basics.patronymic
+    ? [basics.lastName, basics.firstName, basics.patronymic].join(' ')
+    : shortName(basics)
 }
 
 /** Короткое имя — «Михаил Иванов». */
