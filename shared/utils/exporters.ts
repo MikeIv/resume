@@ -205,7 +205,7 @@ export function toPlainText(resume: Resume): string {
     }
     lines.push(`Стек: ${project.stack.join(', ')}`)
     if (project.demo) {
-      lines.push(`Демо: ${project.demo}`)
+      lines.push(`Сайт: ${project.demo}`)
     }
     if (project.code) {
       lines.push(`Код: ${project.code}`)

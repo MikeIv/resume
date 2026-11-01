@@ -56,7 +56,7 @@ const ordered = computed(() => {
                 target="_blank"
               >
                 <Icon name="lucide:external-link" aria-hidden="true" :class="$style.icon" />
-                Демо
+                Сайт
               </a>
               <a
                 v-if="project.code"

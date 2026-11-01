@@ -219,7 +219,7 @@ projects:
     featured: false
 
   - slug: ryaz-pressa
-    name: Рязанская пресса — медиаплатформа
+    name: Издательство «Пресса» — медиаплатформа
     tagline: Публикации и материалы
     role: разработчик
     period: 2026
@@ -227,8 +227,8 @@ projects:
     summary: >-
       Медиаплатформа с публикациями, рубриками и серверной частью на Nitro.
     results:
-      - Демо на Vercel, исходники открыты.
-    demo: https://ryaz-pressa.vercel.app
+      - Текущая версия в продакшене — ryazpressa.ru, новая в разработке.
+    demo: https://ryazpressa.ru/
     code: https://github.com/MikeIv/RyazPressa
     featured: false
 

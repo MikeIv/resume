@@ -156,7 +156,7 @@ useHead({
 
         <p v-if="project.demo || project.code" :class="$style.stack">
           <template v-if="project.demo">
-            <span :class="$style.stackLabel">Демо:</span> {{ project.demo }}
+            <span :class="$style.stackLabel">Сайт:</span> {{ project.demo }}
           </template>
           <template v-if="project.demo && project.code"> · </template>
           <template v-if="project.code">

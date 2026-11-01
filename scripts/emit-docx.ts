@@ -129,7 +129,7 @@ async function main(): Promise<void> {
     if (project.demo || project.code) {
       children.push(
         body(
-          [project.demo ? `Демо: ${project.demo}` : '', project.code ? `Код: ${project.code}` : '']
+          [project.demo ? `Сайт: ${project.demo}` : '', project.code ? `Код: ${project.code}` : '']
             .filter(Boolean)
             .join(' · '),
         ),
