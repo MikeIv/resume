@@ -38,7 +38,7 @@ const items = computed(() => {
       <SectionHeading
         id="contacts-title"
         eyebrow="Контакты"
-        title="Напишите, если ищете frontend-разработчика на Nuxt"
+        title="Напишите, если ищете Frontend / Nuxt fullstack разработчика"
         lead="Отвечаю в течение дня. Резюме в PDF, машиночитаемый JSON и простой текст — ниже."
       />
 

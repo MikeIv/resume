@@ -108,8 +108,12 @@ export const hhSchema = z.object({
   keywords: z.array(nonEmpty).min(1).max(30).optional(),
 })
 
+/**
+ * SEO-поля страницы: заголовок — это `basics.label` с именем, поэтому лимит 90
+ * покрывает имя и label до 74 знаков.
+ */
 export const seoSchema = z.object({
-  title: z.string().trim().min(10).max(70),
+  title: z.string().trim().min(10).max(90),
   description: z.string().trim().min(50).max(180),
 })
 

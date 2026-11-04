@@ -2,7 +2,7 @@
   "name": "resume-site",
   "type": "module",
   "private": true,
-  "description": "Машиночитаемое и человекочитаемое резюме Михаила Иванова (Frontend / Nuxt fullstack)",
+  "description": "Машиночитаемое и человекочитаемое резюме Михаила Иванова (Frontend / Nuxt fullstack разработчик)",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
