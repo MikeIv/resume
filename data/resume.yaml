@@ -2,13 +2,13 @@
 # Правится руками, проверяется схемой shared/schema/resume.ts.
 meta:
   version: 1
-  updated: 2026-11-01
+  updated: 2026-11-04
   locale: ru-RU
 
 basics:
   firstName: Михаил
   lastName: Иванов
-  label: Nuxt fullstack разработчик (Vue 3, Nuxt 4, TypeScript)
+  label: Frontend / Nuxt fullstack разработчик (Vue 3, Nuxt 4, TypeScript)
   headline: >-
     Собираю полный цикл на Nuxt 4: интерфейс, Nitro-эндпоинты, база, авторизация,
     тесты и деплой. Девять лет в веб-разработке и 15+ коммерческих проектов компании.
@@ -348,8 +348,8 @@ earlyExperience:
       подготовка к печати, 3D-визуализация.
 
 seo:
-  title: Михаил Иванов — Nuxt fullstack разработчик (Vue 3, TypeScript)
+  title: Михаил Иванов — Frontend / Nuxt fullstack разработчик (Vue 3)
   description: >-
-    Резюме Nuxt fullstack разработчика: Nuxt 4, Vue 3, TypeScript, Nitro, Prisma,
-    тесты и агентская разработка. Девять лет в веб-разработке, 15+ коммерческих
-    проектов.
+    Резюме Frontend / Nuxt fullstack разработчика: Nuxt 4, Vue 3, TypeScript,
+    Nitro, Prisma, тесты и агентская разработка. Девять лет в веб-разработке,
+    15+ коммерческих проектов.

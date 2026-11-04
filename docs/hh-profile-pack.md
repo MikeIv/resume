@@ -6,7 +6,7 @@
 ## Заголовок резюме (поле POSITION)
 
 ```
-Nuxt fullstack разработчик (Vue 3, Nuxt 4, TypeScript)
+Frontend / Nuxt fullstack разработчик (Vue 3, Nuxt 4, TypeScript)
 ```
 
 ## Контакты профиля
@@ -24,7 +24,7 @@ GitHub: https://github.com/MikeIv
 > «Fullstack-разработчик» в нём отсутствуют, ближайшая роль — «Программист, разработчик».
 
 ```
-Nuxt fullstack разработчик (Vue 3, Nuxt 4, TypeScript)
+Frontend / Nuxt fullstack разработчик (Vue 3, Nuxt 4, TypeScript)
 Специализации: Программист, разработчик
 ```
 
@@ -126,7 +126,7 @@ Nuxt 4, Nuxt 3, Nuxt 2, Vue 3 (Composition API), TypeScript, JavaScript (ES2022)
 > 4 желаемых — из блока `hh.portrait` в `data/resume.yaml`. Правьте там, не здесь.
 
 ```
-1. Роль: Nuxt fullstack разработчик (Vue 3, Nuxt 4, TypeScript)
+1. Роль: Frontend / Nuxt fullstack разработчик (Vue 3, Nuxt 4, TypeScript)
 2. Стек: Nuxt 4, Nuxt 3, Nuxt 2, Vue 3 (Composition API), TypeScript, JavaScript (ES2022), Node.js, Nitro, REST API, Prisma, PostgreSQL, SQLite, better-auth, Zod
 3. Опыт: 9 лет в веб-разработке, 15+ коммерческих проектов, 5 проектов с демо и открытым кодом
 4. Формат: удалённо, гибрид, офис
